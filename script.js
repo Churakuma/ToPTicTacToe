@@ -1,12 +1,9 @@
 function createPlayer(sign) {
     const playerSign = sign;
 
-    // handle the score when player wins
-    let playerScore = 0;
-    const getScore = () => playerScore;
-    const giveScore = () => playerScore++;
+    const getSign = () => playerSign;
 
-    return { sign, getScore, giveScore }
+    return { getSign }
 }
 
 const gameboard = (() => {
@@ -47,8 +44,8 @@ const displayController = (() => {
     restartButton.addEventListener('click', (e) => {
         gameboard.resetField();
         gameController.reset();
-        updateGameBoard();
         setMessageElement("Player X's turn");
+        updateGameBoard();
     });
 
     const updateGameBoard = () => {
@@ -65,8 +62,8 @@ const displayController = (() => {
         }
     };
 
-    const setMessageElement = (message) => {
-        message.textContent = message;
+    const setMessageElement = (newMessage) => {
+        message.textContent = newMessage;
     }
 
     return { setMessageElement, setResultMessage }

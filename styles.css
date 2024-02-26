@@ -1,0 +1,159 @@
+:root {
+    /* Font-families */
+    --ff-primary: 'Roboto', sans-serif;
+    --ff-secondary: serif;
+
+    /* Font-sizes */
+    --fs-900: 9.375rem;
+    --fs-800: 6.25rem;
+    --fs-750: 4.5rem;
+    --fs-700: 3.5rem;
+    --fs-600: 2rem;
+    --fs-500: 1.75rem;
+    --fs-450: 1.5rem;
+    --fs-400: 1.125rem;
+    --fs-300: 1rem;
+    --fs-200: 0.875rem;
+
+    /* Colors */
+    --bg-primary: rgb(246, 247, 250);
+    --bg-secondary: rgb(179, 179, 179);
+    --clr-primary: rgb(73, 77, 198);
+    --clr-secondary: rgb(129, 132, 237);
+    --clr-accent: rgb(77, 82, 252);
+    --font-light: rgb(16, 16, 19);
+    --font-dark: rgb(236, 236, 239);
+}
+
+/* --------------------  */
+/* Reset                 */
+/* --------------------  */
+
+/* https://piccalil.li/blog/a-modern-css-reset/ */
+
+/* Box sizing */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+/* Reset margins */
+body,
+html,
+h1,
+h2,
+h3,
+h4,
+h5,
+p,
+figure,
+picture {
+    margin: 0;
+}
+
+/* Utils classes */
+.grid {
+    display: grid;
+}
+
+.flex {
+    display: flex;
+}
+
+.uppercase {
+    text-transform: uppercase;
+}
+
+.flex__centered {
+    justify-content: center;
+    align-content: center;
+}
+
+.hidden{
+    display: none;
+}
+
+/* Header */
+
+.header {
+    background-color: var(--clr-primary);
+    padding: 32px 0px 32px 0px;
+    box-shadow: 5px 5px 5px grey;
+}
+
+.title {
+    font-family: var(--ff-primary);
+    color: var(--font-dark);
+    font-size: 64px;
+}
+
+/* Main */
+
+.message {
+    font-size: 32px;
+    font-family: var(--ff-primary);
+    color: var(--font-light);
+    margin: 16px 0px 0px 0px;
+    font-weight: 500;
+}
+
+.game__container {
+    flex-wrap: wrap;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.gameboard {
+    margin: 36px 0px 36px 0px;
+    width: 480px;
+    height: 480px;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    box-shadow: 5px 5px 5px grey;
+}
+
+.field {
+    border: 3px solid var(--clr-accent);
+    background-color: var(--clr-primary);
+    cursor: pointer;
+    font-family: var(--ff-primary);
+    font-size: 120px;
+
+    &:hover {
+        background-color: var(--clr-secondary);
+    }
+}
+
+.restart__button {
+    height: 40px;
+    width: 150px;
+}
+
+.restart__button {
+    padding: 12.5px 30px;
+    margin: 20px;
+    border: 0;
+    border-radius: 100px;
+    background-color: var(--clr-primary);
+    color: #ffffff;
+    font-weight: Bold;
+    transition: all 0.5s;
+    -webkit-transition: all 0.5s;
+
+    &:hover {
+        background-color: var(--clr-secondary);
+        box-shadow: 0 0 20px #6fc5ff50;
+        transform: scale(1.1);
+        cursor: pointer;
+    }
+
+    &:active {
+        background-color: var(--clr-accent);
+        transition: all 0.25s;
+        -webkit-transition: all 0.25s;
+        box-shadow: none;
+        transform: scale(0.98);
+    }
+}
