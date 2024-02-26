@@ -52,6 +52,19 @@ picture {
     margin: 0;
 }
 
+html {
+    height: 100vh;
+    width: 100vw;
+}
+
+body {
+    height: 100%;
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
 /* Utils classes */
 .grid {
     display: grid;
@@ -68,6 +81,7 @@ picture {
 .flex__centered {
     justify-content: center;
     align-content: center;
+    flex-wrap: wrap;
 }
 
 .hidden{
@@ -120,6 +134,7 @@ picture {
     cursor: pointer;
     font-family: var(--ff-primary);
     font-size: 120px;
+    text-align: center;
 
     &:hover {
         background-color: var(--clr-secondary);
@@ -157,3 +172,68 @@ picture {
         transform: scale(0.98);
     }
 }
+
+/* Footer */
+
+.footer {
+    background-color: var(--clr-primary);
+    margin-top: auto;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+
+.footer__text {
+    font-family: var(--ff-primary);
+    font-size: larger;
+    color: var(--font-dark);
+}
+
+.Btn {
+    border: none;
+    border-radius: 50%;
+    width: 45px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition-duration: .4s;
+    cursor: pointer;
+    position: relative;
+    background-color: rgb(31, 31, 31);
+    overflow: hidden;
+    margin: 16px 8px 16px 8px;
+  }
+  
+  .svgIcon {
+    transition-duration: .3s;
+  }
+  
+  .svgIcon path {
+    fill: white;
+  }
+  
+  .text {
+    position: absolute;
+    color: rgb(255, 255, 255);
+    width: 120px;
+    font-weight: 600;
+    opacity: 0;
+    transition-duration: .4s;
+  }
+  
+  .Btn:hover {
+    width: 110px;
+    transition-duration: .4s;
+    border-radius: 30px;
+  }
+  
+  .Btn:hover .text {
+    opacity: 1;
+    transition-duration: .4s;
+  }
+  
+  .Btn:hover .svgIcon {
+    opacity: 0;
+    transition-duration: .3s;
+  }
